@@ -109,6 +109,7 @@ function newRole() {
   departmentChoices = departments.map((dbData) => {
     return { name: dbData.name, value: dbData.id };
   });
+  console.log(departmentChoices);
   inquirer
     .prompt([
       {
@@ -125,13 +126,15 @@ function newRole() {
       },
       {
         type: "list",
-        name: "departments_id",
+        name: "department_id",
         message: "To which department does this role belong?",
         choices: departmentChoices,
       },
     ])
     .then((response) => {
-      response.departments_id = parseInt(response.departments_id);
+      response.department_id = parseInt(response.department_id);
+      console.log(response.department_id);
+      console.log(response);
       response.salary = parseInt(response.salary);
       insertRole(response);
     });
@@ -152,19 +155,19 @@ function newEmployee() {
     .prompt([
       {
         type: "input",
-        name: "first_name",
+        name: "firstName",
         message: "What is employee's first name?",
         validate: validateInput,
       },
       {
         type: "input",
-        name: "last_name",
+        name: "lastName",
         message: "What is employee's last name?",
         validate: validateInput,
       },
       {
         type: "list",
-        name: "roles_id",
+        name: "role_id",
         message: "What is their role?",
         choices: roleChoices,
       },
@@ -176,7 +179,7 @@ function newEmployee() {
       },
     ])
     .then((response) => {
-      response.roles_id = parseInt(response.roles_id);
+      response.role_id = parseInt(response.role_id);
       response.manager_id = parseInt(response.manager_id);
       insertEmployee(response);
     });
@@ -254,7 +257,7 @@ function updateRole(chosen, role) {
     [setValue, whereValue],
     (err) => {
       if (err) return console.error(err);
-      console.log("Employee updated.");
+     console.log("Employee updated.");
       Question();
     }
   );
