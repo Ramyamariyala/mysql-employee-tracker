@@ -27,6 +27,7 @@ This is an application that can be used to save, edit and update the employee po
 MIT
 
 # GIF
+[MYSQL-EMPLOYEETRACKER](Assets/gif.gif)
 
 # Tools Used.
 - Visual Studio Code https://code.visualstudio.com

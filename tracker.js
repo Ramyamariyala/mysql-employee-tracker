@@ -133,8 +133,6 @@ function newRole() {
     ])
     .then((response) => {
       response.department_id = parseInt(response.department_id);
-      console.log(response.department_id);
-      console.log(response);
       response.salary = parseInt(response.salary);
       insertRole(response);
     });
