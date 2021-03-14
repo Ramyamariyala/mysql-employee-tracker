@@ -10,9 +10,17 @@ VALUES ("front-end Developer", "75000",1);
 INSERT INTO roles (title, salary, department_id)
 VALUES ("chartered accountant", "75000",1);
 
+INSERT INTO roles (title, salary, department_id)
+VALUES ("client Side designer", "65000",2);
+
 INSERT INTO departments (name)
 VALUES ("Website desigining");
 
 INSERT INTO departments (name)
 VALUES ("Accountant");
 
+INSERT INTO departments (name)
+VALUES ("Website desigining");
+
+INSERT INTO departments (name)
+VALUES ("Accountant");
